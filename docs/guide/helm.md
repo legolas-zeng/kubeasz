@@ -32,7 +32,7 @@ mkdir -p /opt/helm-repo
 # 2.启动helm repo server,如果要其他服务器访问，改为本地IP
 nohup helm serve --address 127.0.0.1:8879 --repo-path /opt/helm-repo &
 # 3.更改helm 配置文件
-将/etc/ansible/role/helm/default/main.yml中repo的地址改为 http://127.0.0.1:8879
+将/etc/ansible/roles/helm/defaults/main.yml中repo的地址改为 http://127.0.0.1:8879
 cat <<EOF >/etc/ansible/role/helm/default/main.yml
 helm_namespace: kube-system 
 helm_cert_cn: helm001
